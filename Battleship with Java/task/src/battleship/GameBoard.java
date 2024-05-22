@@ -1,5 +1,8 @@
 package battleship;
 
+import java.util.List;
+
+
 public class GameBoard {
     private final char[][] board;
     private final int size = 10;
@@ -18,7 +21,7 @@ public class GameBoard {
     }
 
     public void printBoard() {
-        System.out.println("  0 1 2 3 4 5 6 7 8 9");
+        System.out.println("  1 2 3 4 5 6 7 8 9 10");
         for (int row = 0; row < size; row++) {
             System.out.print((char) ('A' + row) + " ");
             for (int col = 0; col < size; col++) {
@@ -26,5 +29,10 @@ public class GameBoard {
             }
             System.out.println();
         }
+    }
+
+    public void placeShipOnBoard(List<Coordinate> shipCoordinates) {
+        for (Coordinate coordinate : shipCoordinates) {
+            board[coordinate.row][coordinate.column] = 'O';        }
     }
 }
