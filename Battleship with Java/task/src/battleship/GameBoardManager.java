@@ -9,7 +9,7 @@ public class GameBoardManager {
 
     public GameBoardManager(GameBoard gameBoard) {
         this.scanner = new Scanner(System.in);
-        this.gameBoard = this.gameBoard;
+        this.gameBoard = gameBoard;
     }
 
     public void placeShipOnBoard() {
