@@ -1,0 +1,27 @@
+# Gradle files
+.gradle/
+build/
+
+# Gradle Wrapper jar and properties
+gradle-wrapper.jar
+gradle-wrapper.properties
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper script (gradlew and gradlew.bat)
+!gradlew
+!gradlew.bat
+
+# IDE (IntelliJ) specific
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Mac OS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
