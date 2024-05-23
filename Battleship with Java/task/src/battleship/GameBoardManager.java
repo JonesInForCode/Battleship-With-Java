@@ -12,7 +12,8 @@ public class GameBoardManager {
         this.gameBoard = gameBoard;
     }
 
-    public void placeShipOnBoard() {
+    public String placeShipOnBoard() {
+        StringBuilder shipDetails = new StringBuilder();
         System.out.println("Enter the coordinates of the ship (e.g., F7 F3):");
         String input = scanner.nextLine();
         String[] parts = input.split(" ");
@@ -27,11 +28,16 @@ public class GameBoardManager {
 
             int length = calculateLength(start, end) + 1;
 
-            Ship ship = new Ship("Battleship", length);
-            ship.placeShip(shipCoordinates);
+            gameBoard.placeShipOnBoard(shipCoordinates);
+
+            shipDetails.append("Length: ").append(length).append("\nParts: ");
+            for (Coordinate coordinate : shipCoordinates) {
+                shipDetails.append((char) ('A' + coordinate.row)).append(coordinate.column + 1).append(" ");
+            }
         } else {
             System.out.println("You should enter two coordinates");
         }
+        return shipDetails.toString();
     }
 
     private int[] convertCoordinates(String coordinates) {
@@ -41,7 +47,11 @@ public class GameBoardManager {
     }
 
     private int calculateLength(int[] start, int[] end) {
-        return Math.abs(end[0] - start[0]) + Math.abs(end[1] - start[1]);
+        if (start[0] == end[0]) {
+            return Math.abs(end[1] - start[1]);
+        } else {
+            return Math.abs(end[0] - start[0]);
+        }
     }
 
     private List<Coordinate> generateShipCoordinates(Coordinate start, Coordinate end) {

@@ -18,6 +18,20 @@ files:
   - name: src/battleship/Coordinate.java
     visible: true
     learner_created: true
-feedback_link: https://hyperskill.org/projects/383/stages/2281/implement#comment
-status: Unchecked
+feedback_link: https://hyperskill.org/learn/step/35304#comment
+status: Failed
+feedback:
+  message: "Wrong answer in test #6\n\nYour program should report an error if there\
+    \ is an input mistake. (Coordinates are not on the same line)\n\nPlease find below\
+    \ the output of your program during this failed test.\nNote that the &#39;&gt;&#39;\
+    \ character indicates the beginning of the input line.\n\n---\n\n1 2 3 4 5 6 7\
+    \ 8 9 10\nA ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nB ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nC ~ ~ ~ ~ ~ ~ ~ ~ ~\
+    \ ~ \nD ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nE ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nF ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \n\
+    G ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nH ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nI ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nJ ~ ~\
+    \ ~ ~ ~ ~ ~ ~ ~ ~ \nEnter the coordinates of the ship (e.g., F7 F3):\n&gt; A3\
+    \ D5\n  1 2 3 4 5 6 7 8 9 10\nA ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nB ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \n\
+    C ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nD ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nE ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nF ~ ~\
+    \ ~ ~ ~ ~ ~ ~ ~ ~ \nG ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nH ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nI ~ ~ ~ ~\
+    \ ~ ~ ~ ~ ~ ~ \nJ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \nLength: 4\nParts:"
+  time: "Thu, 23 May 2024 01:16:34 UTC"
 record: -1

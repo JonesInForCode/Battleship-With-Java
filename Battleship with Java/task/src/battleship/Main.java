@@ -5,7 +5,8 @@ public class Main {
         GameBoard gameBoard = new GameBoard();
         GameBoardManager manager = new GameBoardManager(gameBoard);
         gameBoard.printBoard();
-        manager.placeShipOnBoard();
+        String shipDetails = manager.placeShipOnBoard();
         gameBoard.printBoard();
+        System.out.println(shipDetails);
     }
 }
