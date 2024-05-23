@@ -21,23 +21,39 @@ public class GameBoardManager {
             int[] start = convertCoordinates(parts[0]);
             int[] end = convertCoordinates(parts[1]);
 
-            Coordinate startCoordinate = new Coordinate(start[0], start[1]);
-            Coordinate endCoordinate = new Coordinate(end[0], end[1]);
+            if (isValidCoordinate(start) && isValidCoordinate(end)) {
+                if (isValidShipPlacement(start, end)) {
+                    Coordinate startCoordinate = new Coordinate(start[0], start[1]);
+                    Coordinate endCoordinate = new Coordinate(end[0], end[1]);
 
-            List<Coordinate> shipCoordinates = generateShipCoordinates(startCoordinate, endCoordinate);
+                    List<Coordinate> shipCoordinates = generateShipCoordinates(startCoordinate, endCoordinate);
 
-            int length = calculateLength(start, end) + 1;
+                    int length = calculateLength(start, end) + 1;
 
-            gameBoard.placeShipOnBoard(shipCoordinates);
+                    gameBoard.placeShipOnBoard(shipCoordinates);
 
-            shipDetails.append("Length: ").append(length).append("\nParts: ");
-            for (Coordinate coordinate : shipCoordinates) {
-                shipDetails.append((char) ('A' + coordinate.row)).append(coordinate.column + 1).append(" ");
+                    shipDetails.append("Length: ").append(length).append("\nParts: ");
+                    for (Coordinate coordinate : shipCoordinates) {
+                        shipDetails.append((char) ('A' + coordinate.row)).append(coordinate.column + 1).append(" ");
+                    }
+                } else {
+                    System.out.println("Error!");
+                }
+            } else {
+                System.out.println("Error!");
             }
         } else {
             System.out.println("You should enter two coordinates");
         }
         return shipDetails.toString();
+    }
+
+    private boolean isValidCoordinate(int[] coordinate) {
+        return coordinate[0] >= 0 && coordinate[0] < 10 && coordinate[1] >= 0 && coordinate[1] < 10;
+    }
+
+    private boolean isValidShipPlacement(int[] start, int[] end) {
+        return start[0] == end[0] || start[1] == end[1];
     }
 
     private int[] convertCoordinates(String coordinates) {
